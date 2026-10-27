@@ -11,7 +11,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   background: radial-gradient(ellipse at 50% 40%, #FFF0D0 0%, #FAD9A0 40%, #F5C080 100%);
   padding: 0 20px clamp(16px, 3vh, 24px);
 }

@@ -11,7 +11,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   background: radial-gradient(ellipse at 50% 30%, #5A1010 0%, #3C0808 40%, #1A0404 100%);
 }
 
@@ -216,6 +218,7 @@
   inset: 0;
   background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
   border-radius: inherit;
+  pointer-events: none;
 }
 
 .cover-cta-btn:hover {
