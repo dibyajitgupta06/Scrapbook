@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import AudioPlayer from './components/AudioPlayer'
+import FestiveElements from './components/FestiveElements'
 import Captcha from './components/Captcha'
 import Cover from './components/Cover'
 import Shoptomi1 from './components/Shoptomi1'
@@ -36,6 +37,9 @@ function App() {
     <div className="app">
       {/* Continuous Durga Puja Dhak background sound player */}
       <AudioPlayer />
+
+      {/* Aesthetic Durga Puja festive elements across every page */}
+      <FestiveElements />
 
       {/* key={currentPage} guarantees fresh DOM mount and triggers page-enter animation reliably on every device */}
       <div
