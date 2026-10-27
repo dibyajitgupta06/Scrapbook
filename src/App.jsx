@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import AudioPlayer from './components/AudioPlayer'
 import Captcha from './components/Captcha'
 import Cover from './components/Cover'
 import Shoptomi1 from './components/Shoptomi1'
@@ -33,6 +34,9 @@ function App() {
 
   return (
     <div className="app">
+      {/* Continuous Durga Puja Dhak background sound player */}
+      <AudioPlayer />
+
       {/* key={currentPage} guarantees fresh DOM mount and triggers page-enter animation reliably on every device */}
       <div
         key={currentPage}
