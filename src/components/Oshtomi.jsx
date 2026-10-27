@@ -1,56 +1,33 @@
 import './ScrapbookPage.css'
 
-/* ============================================================
-   অষ্টমী — The Photograph
-   Warm cream page: white-bg PNGs, composed side by side
-   ============================================================ */
-
 export default function Oshtomi({ onNext }) {
   return (
     <div className="scrapbook-page os-page" role="main">
-
-      <span className="sp-corner sp-corner--tl os-corner" aria-hidden="true">◈</span>
-      <span className="sp-corner sp-corner--tr os-corner" aria-hidden="true">◈</span>
-
-      {/* Header */}
-      <div className="sp-header os-header">
-        <div className="sp-tape sp-tape--left os-tape" aria-hidden="true">
-          <span className="handwritten">মহাঅষ্টমী 📸</span>
-        </div>
-
+      {/* Day heading */}
+      <div className="sp-header">
         <div className="day-label-wrapper">
-          <h1 className="day-label bn-display os-label" lang="bn">অষ্টমী</h1>
-          <div className="day-label-underline os-underline" />
-        </div>
-
-        <div className="sp-tape sp-tape--right os-tape-r" aria-hidden="true">
-          <span className="handwritten">click! ❤️</span>
+          <h1 className="day-label bn-display" lang="bn">
+            অষ্টমী
+          </h1>
+          <div className="day-label-underline" />
         </div>
       </div>
 
-      {/* Dual composition: boy photographing + girl photographed */}
-      <div className="os-illo-area">
-        {/* Girl — the main subject */}
-        <div className="os-girl-wrap">
+      {/* Hero Dual composition: girl and boy photographing her taking over the screen */}
+      <div className="os-hero-area">
+        <div className="os-girl-frame">
           <img
             src={`${import.meta.env.BASE_URL}images/oshtomi_girl.png`}
-            alt="She was stunning in her Ashtami saree"
+            alt="অষ্টমী"
             className="os-girl-img"
             loading="eager"
             draggable="false"
           />
-          {/* Small camera stamp */}
-          <div className="os-photo-stamp" aria-hidden="true">
-            <span>📷</span>
-            <span className="handwritten os-stamp-text">Ashtami 2026</span>
-          </div>
         </div>
-
-        {/* Boy photographing her */}
-        <div className="os-boy-wrap">
+        <div className="os-boy-frame">
           <img
             src={`${import.meta.env.BASE_URL}images/oshtomi_boy.png`}
-            alt="He was secretly photographing her beauty"
+            alt="Photographing"
             className="os-boy-img"
             loading="eager"
             draggable="false"
@@ -58,29 +35,17 @@ export default function Oshtomi({ onNext }) {
         </div>
       </div>
 
-      {/* Little caption note */}
-      <div className="os-caption-note" aria-label="Caption">
-        <div className="os-note-tape" aria-hidden="true" />
-        <p className="handwritten os-caption-text">
-          "caught in the act 📸"
-        </p>
-      </div>
-
-      {/* Footer */}
-      <div className="sp-footer os-footer">
+      {/* Clean Navigation */}
+      <div className="sp-footer">
         <button
           className="nav-btn nav-btn-primary sp-nav-btn"
           onClick={onNext}
-          aria-label="Next: নবমী"
+          aria-label="NEXT"
         >
-          <span>পরের দিন</span>
+          <span>NEXT</span>
           <span aria-hidden="true">→</span>
         </button>
-        <p className="sp-page-hint handwritten os-hint" aria-hidden="true">নবমী</p>
       </div>
-
-      <span className="sp-corner sp-corner--bl os-corner" aria-hidden="true">◈</span>
-      <span className="sp-corner sp-corner--br os-corner" aria-hidden="true">◈</span>
     </div>
   )
 }

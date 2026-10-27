@@ -144,9 +144,6 @@ export default function Captcha({ onNext }) {
           <h1 className="captcha-title">
             Who is the most beautiful woman in the world?
           </h1>
-          <p className="captcha-subtitle-bn" lang="bn">
-            সঠিক উত্তরটি বেছে নাও।
-          </p>
           <p className="captcha-subtitle">
             Select the correct answer to prove you're human.
           </p>
@@ -195,10 +192,6 @@ export default function Captcha({ onNext }) {
 
             <p className="captcha-goddess-submsg">
               The system has encountered a beauty beyond human classification.
-            </p>
-
-            <p className="captcha-goddess-bn" lang="bn">
-              তুমি মানুষ নও, তুমি তো দেবী। ❤️
             </p>
 
             <button

@@ -91,9 +91,6 @@ export default function Proposal({ onNext }) {
         <div className="proposal-header-deco" aria-hidden="true">
           🌸 ✦ 🌸 ✦ 🌸
         </div>
-        <div className="proposal-title-badge">
-          <span className="handwritten proposal-badge-text" lang="bn">একটা কথা ছিল...</span>
-        </div>
       </div>
 
       {/* Main question */}
@@ -109,10 +106,6 @@ export default function Proposal({ onNext }) {
         <h1 className="proposal-question">
           ARE YOU GOING TO SPEND THE REST OF YOUR PUJAS WITH ME?
         </h1>
-
-        <p className="proposal-question-bn bn-body" lang="bn">
-          প্রতিটা পুজো কি আমার সাথে কাটাবে?
-        </p>
 
         <div className="proposal-question-ornament" aria-hidden="true">
           <svg width="200" height="20" viewBox="0 0 200 20" fill="none">
@@ -152,13 +145,6 @@ export default function Proposal({ onNext }) {
           NO 🙃
         </button>
       </div>
-
-      {/* Playful hint after enough attempts */}
-      {showHint && (
-        <p className="proposal-hint handwritten" role="status" aria-live="polite">
-          সে পালাবেই... 😂
-        </p>
-      )}
 
       {/* Footer flowers */}
       <div className="proposal-footer-flowers" aria-hidden="true">

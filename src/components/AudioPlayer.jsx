@@ -89,8 +89,8 @@ export default function AudioPlayer() {
         <span className="dhak-icon" aria-hidden="true">
           {isPlaying ? '🥁 🔊' : '🥁 🔇'}
         </span>
-        <span className="dhak-label bn-body" lang="bn">
-          {isPlaying ? 'ঢাক বাজছে' : 'ঢাক বন্ধ'}
+        <span className="dhak-label">
+          {isPlaying ? 'Dhak Beat ♫' : 'Muted'}
         </span>
       </button>
     </>

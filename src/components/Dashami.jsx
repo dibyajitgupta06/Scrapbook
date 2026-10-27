@@ -1,75 +1,40 @@
 import './ScrapbookPage.css'
 
-/* ============================================================
-   দশমী — The Last Day
-   Deep red page: black-bg JPG blends, bittersweet + beautiful
-   ============================================================ */
-
 export default function Dashami({ onNext }) {
   return (
     <div className="scrapbook-page ds-page" role="main">
-
-      <span className="sp-corner sp-corner--tl ds-corner" aria-hidden="true">❋</span>
-      <span className="sp-corner sp-corner--tr ds-corner" aria-hidden="true">❋</span>
-
-      {/* Top petal band */}
-      <div className="ds-petal-band" aria-hidden="true">
-        {['🌹','🌺','🌹','🌺','🌹','🌺','🌹','🌺','🌹'].map((f, i) => (
-          <span key={i} style={{ animationDelay: `${i * 0.35}s` }}>{f}</span>
-        ))}
-      </div>
-
-      {/* Header */}
-      <div className="sp-header ds-header">
+      {/* Day heading */}
+      <div className="sp-header">
         <div className="day-label-wrapper">
-          <div className="ds-title-top handwritten" aria-hidden="true">বিজয়া দশমী</div>
-          <h1 className="day-label bn-display ds-label" lang="bn">দশমী</h1>
-          <div className="day-label-underline ds-underline" />
+          <h1 className="day-label bn-display" lang="bn">
+            দশমী
+          </h1>
+          <div className="day-label-underline" />
         </div>
       </div>
 
-      {/* Main illustration */}
-      <div className="ds-illo-area">
+      {/* Hero illustration - Transparent PNG covering most of the page */}
+      <div className="sp-hero-illo">
         <img
-          src={`${import.meta.env.BASE_URL}images/dashami.jpg`}
-          alt="He gave her a bouquet of roses on Dashami — the last day of Puja"
-          className="ds-img"
+          src={`${import.meta.env.BASE_URL}images/dashami.png`}
+          alt="দশমী"
+          className="sp-main-img"
           loading="eager"
           draggable="false"
         />
-
-        {/* Floating rose petals around the image */}
-        <div className="ds-scatter" aria-hidden="true">
-          <span className="ds-petal ds-p1">🌹</span>
-          <span className="ds-petal ds-p2">🌺</span>
-          <span className="ds-petal ds-p3">❤️</span>
-          <span className="ds-petal ds-p4">🌹</span>
-        </div>
       </div>
 
-      {/* Caption */}
-      <div className="ds-caption-wrap">
-        <div className="ds-caption-card">
-          <p className="handwritten ds-caption">
-            পুজো শেষ হয়, গল্প শেষ হয় না... 🌹
-          </p>
-        </div>
-      </div>
-
-      {/* Footer — special "one last thing" button */}
-      <div className="sp-footer ds-footer">
+      {/* Footer with ONE LAST THING button leading to proposal */}
+      <div className="sp-footer">
         <button
           className="nav-btn ds-cta-btn sp-nav-btn"
           onClick={onNext}
-          aria-label="One last thing — the proposal"
+          aria-label="ONE LAST THING"
         >
           <span>ONE LAST THING</span>
           <span aria-hidden="true">→</span>
         </button>
       </div>
-
-      <span className="sp-corner sp-corner--bl ds-corner" aria-hidden="true">❋</span>
-      <span className="sp-corner sp-corner--br ds-corner" aria-hidden="true">❋</span>
     </div>
   )
 }

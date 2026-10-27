@@ -83,18 +83,10 @@ export default function Celebration() {
         <div className="cel-emoji-row" aria-hidden="true">
           🎉 ❤️ 🎊 ❤️ 🎉
         </div>
-
-        <p className="cel-subtitle bn-body" lang="bn">
-          এই তো! এবার থেকে সব পুজো একসাথে।
-        </p>
       </div>
 
       {/* The Promise — appears after a short delay */}
       <div className={`cel-promise-block ${showPromise ? 'cel-promise-visible' : ''}`}>
-        <div className="cel-promise-tape" aria-hidden="true">
-          <span className="handwritten">from the bottom of my heart</span>
-        </div>
-
         <div className="cel-promise-card">
           <div className="cel-promise-card-inner">
             <div className="cel-promise-flowers" aria-hidden="true">
@@ -106,11 +98,6 @@ export default function Celebration() {
             <span className="cel-promise-heart" aria-hidden="true">❤️</span>
           </div>
         </div>
-
-        {/* Bengali echo of the promise */}
-        <p className="cel-promise-bn bn-body" lang="bn">
-          প্রতিটা পুজোকে তোমার জন্য বিশেষ করে তুলব।
-        </p>
       </div>
 
       {/* Bottom celebration flowers */}

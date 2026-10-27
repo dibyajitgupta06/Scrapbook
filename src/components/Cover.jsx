@@ -80,26 +80,15 @@ export default function Cover({ onNext }) {
           </div>
         </div>
 
-        {/* Bengali tagline */}
-        <div className="cover-tagline-block">
-          <span className="cover-tag-deco" aria-hidden="true">❀</span>
-          <p className="cover-tagline bn-body" lang="bn">
-            পাঁচটি দিন · পাঁচটি স্মৃতি · একটি গল্প
-          </p>
-          <span className="cover-tag-deco" aria-hidden="true">❀</span>
-        </div>
-
         {/* CTA Button */}
         <button
           className="cover-cta-btn"
           onClick={onNext}
-          aria-label="আমাদের পুজো ২০২৬ এর স্মৃতি দেখুন"
+          aria-label="Let's relive our Pujo 2026"
         >
           <span className="cover-cta-text">LET'S RELIVE OUR PUJO 2026</span>
           <span className="cover-cta-arrow" aria-hidden="true">❋</span>
         </button>
-
-        <p className="cover-whisper handwritten" aria-hidden="true">scroll through our memories...</p>
       </div>
 
       {/* Bottom decorative band */}
