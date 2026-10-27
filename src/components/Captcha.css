@@ -1,0 +1,324 @@
+/* ============================================================
+   CAPTCHA SCREEN — Fictional Playful Verification
+   "Who is the most beautiful woman in the world?"
+   ============================================================ */
+
+.captcha-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  background: radial-gradient(ellipse at 50% 30%, #4A0E0E 0%, #2A0606 50%, #150202 100%);
+}
+
+.captcha-bg-glow {
+  position: absolute;
+  width: min(600px, 90vw);
+  height: min(600px, 90vw);
+  background: radial-gradient(circle, rgba(201,162,39,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: glowPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Card Box */
+.captcha-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+  background: var(--cream, #FFF8E7);
+  border: 2px solid rgba(201, 162, 39, 0.4);
+  border-radius: 16px;
+  padding: 24px 20px;
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.5),
+    0 2px 6px rgba(201, 162, 39, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+/* Header */
+.captcha-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.captcha-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(74, 14, 14, 0.08);
+  border: 1px solid rgba(74, 14, 14, 0.15);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--maroon, #4A0E0E);
+}
+
+.captcha-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 4vw, 1.55rem);
+  font-weight: 700;
+  color: var(--maroon, #4A0E0E);
+  line-height: 1.3;
+}
+
+.captcha-subtitle {
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  color: #6C5440;
+  margin-top: -2px;
+}
+
+/* 3x3 Grid */
+.captcha-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 360px;
+  margin: 4px 0;
+}
+
+.captcha-grid-shake {
+  animation: gridShake 0.45s ease-in-out;
+}
+
+@keyframes gridShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+/* Photo Tile */
+.captcha-tile {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: #FAF0D7;
+  border: 2px solid rgba(201, 162, 39, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.captcha-tile:hover {
+  transform: scale(1.04);
+  border-color: var(--saffron, #E8711A);
+  box-shadow: 0 4px 12px rgba(232, 113, 26, 0.25);
+}
+
+.captcha-tile:active {
+  transform: scale(0.97);
+}
+
+.captcha-tile-selected {
+  border-color: var(--vermilion, #C1392B);
+  box-shadow: 0 0 0 2px var(--vermilion, #C1392B);
+}
+
+.captcha-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Fallback placeholder when photo is pending */
+.captcha-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: linear-gradient(135deg, #FDF4E3 0%, #F5E6C8 100%);
+  color: var(--maroon, #4A0E0E);
+  padding: 6px;
+}
+
+.captcha-placeholder-icon {
+  font-size: 1.4rem;
+}
+
+.captcha-placeholder-name {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #7A583A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.captcha-tile-overlay {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--leaf-green, #27AE60);
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* Error message */
+.captcha-error-alert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FDEDEC;
+  border: 1px solid #F5B7B1;
+  color: #922B21;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  animation: fadeInDown 0.3s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer security badge */
+.captcha-footer-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: #8C7560;
+  opacity: 0.85;
+}
+
+/* ============================================================
+   SUCCESS STATE — GODDESS REVEAL
+   ============================================================ */
+.captcha-success-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 8px 8px;
+  animation: revealPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes revealPop {
+  0% { opacity: 0; transform: scale(0.85) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.captcha-goddess-halo {
+  font-size: 2.2rem;
+  animation: haloFloat 3s ease-in-out infinite;
+}
+
+@keyframes haloFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.captcha-goddess-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 4.5vw, 1.8rem);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--maroon, #4A0E0E);
+  line-height: 1.25;
+  text-shadow: 0 2px 10px rgba(201, 162, 39, 0.3);
+}
+
+.captcha-goddess-divider {
+  color: var(--mustard, #C9A227);
+  letter-spacing: 8px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.captcha-goddess-desc {
+  font-size: clamp(0.9rem, 2.8vw, 1.05rem);
+  color: var(--saffron, #E8711A);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.captcha-goddess-bn {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: clamp(0.95rem, 3vw, 1.15rem);
+  color: var(--maroon, #4A0E0E);
+  opacity: 0.85;
+}
+
+/* Enter Scrapbook Button */
+.captcha-enter-btn {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #E8711A 0%, #C1392B 100%);
+  color: #fff;
+  font-family: 'Kalam', cursive;
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  font-weight: 700;
+  border: 2px solid rgba(255, 200, 100, 0.4);
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow:
+    0 8px 24px rgba(193, 57, 43, 0.5),
+    0 2px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.captcha-enter-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  filter: brightness(1.08);
+  box-shadow: 0 12px 30px rgba(193, 57, 43, 0.6);
+}
+
+.captcha-enter-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.captcha-enter-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.captcha-enter-btn:hover .captcha-enter-arrow {
+  transform: translateX(4px);
+}
