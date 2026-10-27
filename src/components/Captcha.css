@@ -50,7 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   text-align: center;
 }
 
@@ -59,7 +59,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   width: 100%;
 }
 
@@ -69,9 +69,9 @@
   gap: 6px;
   background: rgba(74, 14, 14, 0.08);
   border: 1px solid rgba(74, 14, 14, 0.15);
-  padding: 4px 12px;
+  padding: 4px 14px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--maroon, #4A0E0E);
@@ -85,8 +85,16 @@
   line-height: 1.3;
 }
 
+.captcha-subtitle-bn {
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--saffron, #E8711A);
+  margin-top: 2px;
+}
+
 .captcha-subtitle {
-  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  font-size: clamp(0.78rem, 2.5vw, 0.88rem);
   color: #6C5440;
   margin-top: -2px;
 }
@@ -193,21 +201,37 @@
   font-weight: bold;
 }
 
-/* Error message */
-.captcha-error-alert {
+/* Error card with comedy escalation */
+.captcha-error-card {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  gap: 4px;
   background: #FDEDEC;
   border: 1px solid #F5B7B1;
   color: #922B21;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
   animation: fadeInDown 0.3s ease;
   width: 100%;
-  justify-content: center;
+  text-align: center;
+}
+
+.captcha-error-main {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #B03A2E;
+}
+
+.captcha-error-sub {
+  font-size: 0.82rem;
+  color: #641E16;
+}
+
+.captcha-error-tag {
+  font-size: 0.75rem;
+  color: #7B241C;
+  font-style: italic;
+  margin-top: 2px;
 }
 
 @keyframes fadeInDown {
@@ -226,14 +250,14 @@
 }
 
 /* ============================================================
-   SUCCESS STATE — GODDESS REVEAL
+   SUCCESS STATE — GODDESS REVEAL 👑
    ============================================================ */
 .captcha-success-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  padding: 16px 8px 8px;
+  gap: 12px;
+  padding: 12px 8px 6px;
   animation: revealPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
@@ -252,14 +276,75 @@
   50% { transform: translateY(-6px); }
 }
 
+/* Her photo frame in reveal */
+.captcha-goddess-photo-frame {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--light-gold, #F0CE60) 0%, var(--mustard, #C9A227) 100%);
+  box-shadow:
+    0 0 25px rgba(201, 162, 39, 0.5),
+    0 4px 15px rgba(0, 0, 0, 0.3);
+  margin: 4px 0;
+}
+
+.captcha-goddess-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.captcha-goddess-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #FFF8E7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--maroon, #4A0E0E);
+}
+
+.captcha-goddess-photo-placeholder .handwritten {
+  font-size: 0.7rem;
+  color: var(--maroon, #4A0E0E);
+}
+
+.captcha-photo-aura {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px dashed rgba(201, 162, 39, 0.6);
+  animation: spinAura 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes spinAura {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .captcha-goddess-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.3rem, 4.5vw, 1.8rem);
+  font-size: clamp(1.3rem, 4.5vw, 1.85rem);
   font-weight: 700;
   font-style: italic;
   color: var(--maroon, #4A0E0E);
-  line-height: 1.25;
+  line-height: 1.3;
   text-shadow: 0 2px 10px rgba(201, 162, 39, 0.3);
+}
+
+.captcha-goddess-highlight {
+  color: var(--sindoor, #B03A2E);
+  display: inline-block;
+  font-size: 1.15em;
+  text-shadow: 0 0 15px rgba(232, 113, 26, 0.4);
 }
 
 .captcha-goddess-divider {
@@ -276,6 +361,13 @@
   letter-spacing: 0.02em;
 }
 
+.captcha-goddess-submsg {
+  font-size: 0.82rem;
+  color: #7A583A;
+  font-style: italic;
+  max-width: 320px;
+}
+
 .captcha-goddess-bn {
   font-family: 'Hind Siliguri', sans-serif;
   font-size: clamp(0.95rem, 3vw, 1.15rem);
@@ -289,7 +381,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 28px;
+  padding: 14px 30px;
   background: linear-gradient(135deg, #E8711A 0%, #C1392B 100%);
   color: #fff;
   font-family: 'Kalam', cursive;
