@@ -169,7 +169,7 @@
   filter: drop-shadow(0 12px 24px rgba(26, 82, 118, 0.18));
 }
 
-/* Dual illustration: Oshtomi (Girl + Boy Photographing) */
+/* Dual illustration: Oshtomi (Guy Photographing on left + Girl on right) */
 .os-hero-area {
   flex: 1;
   display: flex;
@@ -178,39 +178,39 @@
   width: 100%;
   max-width: 900px;
   padding: 8px 12px;
-  gap: clamp(6px, 2vw, 20px);
+  gap: clamp(8px, 2.5vw, 24px);
   min-height: 0;
   z-index: 1;
-}
-
-.os-girl-frame {
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  max-width: 52%;
-}
-
-.os-girl-img {
-  max-height: clamp(330px, 70vh, 660px);
-  max-width: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 14px 28px rgba(74, 14, 14, 0.22));
 }
 
 .os-boy-frame {
   flex: 1 1 auto;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: flex-end;
   max-width: 48%;
 }
 
 .os-boy-img {
-  max-height: clamp(300px, 64vh, 600px);
+  max-height: clamp(350px, 75vh, 720px);
   max-width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 12px 24px rgba(74, 14, 14, 0.18));
+  filter: drop-shadow(0 16px 30px rgba(74, 14, 14, 0.24));
+}
+
+.os-girl-frame {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  max-width: 52%;
+}
+
+.os-girl-img {
+  max-height: clamp(290px, 63vh, 590px);
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(74, 14, 14, 0.20));
 }
 
 /* Dual illustration: Nabami (Gift Scene + Payel Scene) */
@@ -337,19 +337,21 @@
 
   /* Oshtomi on mobile */
   .os-hero-area {
-    gap: 4px;
+    gap: clamp(4px, 1.5vw, 10px);
     padding: 4px;
-  }
-  .os-girl-frame {
-    max-width: 54%;
-  }
-  .os-girl-img {
-    max-height: 64vh;
   }
   .os-boy-frame {
     max-width: 46%;
+    justify-content: flex-end;
   }
   .os-boy-img {
+    max-height: 68vh;
+  }
+  .os-girl-frame {
+    max-width: 54%;
+    justify-content: flex-start;
+  }
+  .os-girl-img {
     max-height: 58vh;
   }
 

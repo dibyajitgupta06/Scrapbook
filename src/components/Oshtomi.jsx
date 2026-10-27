@@ -13,22 +13,22 @@ export default function Oshtomi({ onNext }) {
         </div>
       </div>
 
-      {/* Hero Dual composition: girl and boy photographing her taking over the screen */}
+      {/* Hero Dual composition: guy photographing on left (bigger), girl on right */}
       <div className="os-hero-area">
-        <div className="os-girl-frame">
-          <img
-            src={`${import.meta.env.BASE_URL}images/oshtomi_girl.png`}
-            alt="অষ্টমী"
-            className="os-girl-img"
-            loading="eager"
-            draggable="false"
-          />
-        </div>
         <div className="os-boy-frame">
           <img
             src={`${import.meta.env.BASE_URL}images/oshtomi_boy.png`}
             alt="Photographing"
             className="os-boy-img"
+            loading="eager"
+            draggable="false"
+          />
+        </div>
+        <div className="os-girl-frame">
+          <img
+            src={`${import.meta.env.BASE_URL}images/oshtomi_girl.png`}
+            alt="অষ্টমী"
+            className="os-girl-img"
             loading="eager"
             draggable="false"
           />
