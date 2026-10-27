@@ -33,7 +33,7 @@ export default function Oshtomi({ onNext }) {
         {/* Girl — the main subject */}
         <div className="os-girl-wrap">
           <img
-            src="images/oshtomi_girl.png"
+            src={`${import.meta.env.BASE_URL}images/oshtomi_girl.png`}
             alt="She was stunning in her Ashtami saree"
             className="os-girl-img"
             loading="eager"
@@ -49,7 +49,7 @@ export default function Oshtomi({ onNext }) {
         {/* Boy photographing her */}
         <div className="os-boy-wrap">
           <img
-            src="images/oshtomi_boy.png"
+            src={`${import.meta.env.BASE_URL}images/oshtomi_boy.png`}
             alt="He was secretly photographing her beauty"
             className="os-boy-img"
             loading="eager"

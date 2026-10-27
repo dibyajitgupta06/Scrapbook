@@ -35,7 +35,7 @@ export default function Shoptomi1({ onNext }) {
       {/* Main illustration */}
       <div className="sp-illo-area sp1-illo">
         <img
-          src="images/shoptomi1.jpg"
+          src={`${import.meta.env.BASE_URL}images/shoptomi1.jpg`}
           alt="We rode a decorated rickshaw together on Shoptomi — a laughing moment"
           className="sp1-img"
           loading="eager"

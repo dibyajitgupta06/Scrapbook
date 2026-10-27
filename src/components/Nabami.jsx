@@ -28,7 +28,7 @@ export default function Nabami({ onNext }) {
       <div className="nb-illo-area">
         <div className="nb-gift-wrap">
           <img
-            src="images/nabami_gift.jpg"
+            src={`${import.meta.env.BASE_URL}images/nabami_gift.jpg`}
             alt="He surprised her with a gift on Nabami"
             className="nb-gift-img"
             loading="eager"
@@ -43,7 +43,7 @@ export default function Nabami({ onNext }) {
 
         <div className="nb-anklet-wrap">
           <img
-            src="images/nabami_anklet.jpg"
+            src={`${import.meta.env.BASE_URL}images/nabami_anklet.jpg`}
             alt="He clasped the anklet on her foot, she smiled dreamily"
             className="nb-anklet-img"
             loading="eager"

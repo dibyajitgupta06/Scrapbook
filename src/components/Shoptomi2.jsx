@@ -32,7 +32,7 @@ export default function Shoptomi2({ onNext }) {
         {/* Main: couple walking, takes more space */}
         <div className="sp2-couple-wrap">
           <img
-            src="images/shoptomi2_couple.png"
+            src={`${import.meta.env.BASE_URL}images/shoptomi2_couple.png`}
             alt="We walked hand in hand on Shoptomi"
             className="sp2-couple-img"
             loading="eager"
@@ -43,7 +43,7 @@ export default function Shoptomi2({ onNext }) {
         {/* Secondary: the decorated rickshaw waiting */}
         <div className="sp2-rickshaw-wrap">
           <img
-            src="images/shoptomi2_rickshaw.png"
+            src={`${import.meta.env.BASE_URL}images/shoptomi2_rickshaw.png`}
             alt="Our beautifully decorated rickshaw"
             className="sp2-rickshaw-img"
             loading="eager"

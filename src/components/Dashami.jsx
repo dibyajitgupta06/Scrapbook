@@ -31,7 +31,7 @@ export default function Dashami({ onNext }) {
       {/* Main illustration */}
       <div className="ds-illo-area">
         <img
-          src="images/dashami.jpg"
+          src={`${import.meta.env.BASE_URL}images/dashami.jpg`}
           alt="He gave her a bouquet of roses on Dashami — the last day of Puja"
           className="ds-img"
           loading="eager"
