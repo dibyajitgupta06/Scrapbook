@@ -1,0 +1,338 @@
+/* ============================================================
+   PUJO 2026 — Global Design System
+   Bengali-cultural, handcrafted scrapbook aesthetic
+   ============================================================ */
+
+/* ===== RESET ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== COLOR PALETTE ===== */
+:root {
+  --vermilion:    #C1392B;
+  --sindoor:      #B03A2E;
+  --saffron:      #E8711A;
+  --orange:       #E67E22;
+  --mustard:      #C9A227;
+  --light-gold:   #F0CE60;
+  --cream:        #FFF8E7;
+  --off-white:    #FAF0D7;
+  --paper:        #F5E6C8;
+  --paper-dark:   #EDD9A3;
+  --maroon:       #4A0E0E;
+  --deep-maroon:  #2C0808;
+  --leaf-green:   #27AE60;
+  --peacock:      #1A5276;
+  --turquoise:    #148F77;
+  --gold:         #C9A227;
+  --rose:         #D98880;
+  --blush:        #F9EBEA;
+  --ink:          #1C1008;
+  --shadow:       rgba(44, 8, 8, 0.18);
+}
+
+/* ===== BASE ===== */
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+  background: var(--deep-maroon);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ===== APP SHELL ===== */
+.app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ===== PAGE TRANSITIONS ===== */
+.page-enter {
+  animation: pageEnter 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.page-exit {
+  animation: pageExit 0.4s ease-in forwards;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateX(60px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes pageExit {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+}
+
+/* ===== BENGALI TYPOGRAPHY ===== */
+.bn-display {
+  font-family: 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.bn-heading {
+  font-family: 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
+  font-weight: 700;
+}
+.bn-body {
+  font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+  font-weight: 400;
+}
+.handwritten {
+  font-family: 'Kalam', cursive;
+}
+
+/* ===== SCRAPBOOK PAGE BASE ===== */
+.scrapbook-page {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  scrollbar-width: thin;
+  scrollbar-color: var(--mustard) transparent;
+}
+
+/* ===== PAPER TEXTURE ===== */
+.paper-bg {
+  background-color: var(--off-white);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, #FFF8E7 0%, #FAF0D7 50%, #F5E6C8 100%);
+}
+
+.dark-paper-bg {
+  background-color: var(--maroon);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, #5A1010 0%, #3C0808 50%, #2C0808 100%);
+}
+
+/* ===== DECORATIVE ALPANA BORDER ===== */
+.alpana-border-top,
+.alpana-border-bottom {
+  width: 100%;
+  height: 24px;
+  flex-shrink: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='24'%3E%3Cg fill='none' stroke='%23C9A227' stroke-width='1.5'%3E%3Ccircle cx='40' cy='12' r='8'/%3E%3Ccircle cx='40' cy='12' r='4'/%3E%3Cpath d='M40 4 L40 1 M40 20 L40 23 M32 12 L29 12 M48 12 L51 12'/%3E%3Cpath d='M0 12 Q10 4 20 12 Q10 20 0 12Z' fill='%23C9A227' opacity='0.4'/%3E%3Cpath d='M60 12 Q70 4 80 12 Q70 20 60 12Z' fill='%23C9A227' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 80px 24px;
+}
+
+/* ===== DAY LABEL ===== */
+.day-label-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 24px;
+  position: relative;
+}
+
+.day-label {
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  line-height: 1;
+  text-align: center;
+  font-family: 'Noto Sans Bengali', sans-serif;
+  font-weight: 900;
+}
+
+.day-label-underline {
+  width: 60%;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+}
+
+/* ===== NAV BUTTON ===== */
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Kalam', cursive;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  position: relative;
+  text-decoration: none;
+}
+.nav-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  filter: brightness(1.08);
+}
+.nav-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+.nav-btn:focus-visible {
+  outline: 3px solid var(--light-gold);
+  outline-offset: 3px;
+}
+
+.nav-btn-primary {
+  background: linear-gradient(135deg, var(--saffron), var(--orange));
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(232,113,26,0.45), 0 2px 0 rgba(0,0,0,0.2);
+}
+.nav-btn-maroon {
+  background: linear-gradient(135deg, var(--maroon), var(--deep-maroon));
+  color: var(--light-gold);
+  box-shadow: 0 6px 20px rgba(44,8,8,0.45);
+}
+.nav-btn-gold {
+  background: linear-gradient(135deg, var(--mustard), var(--light-gold));
+  color: var(--maroon);
+  box-shadow: 0 6px 20px rgba(201,162,39,0.5);
+}
+
+/* ===== DECORATIVE FLOWERS (CSS) ===== */
+.flower-deco {
+  display: inline-block;
+  font-size: 1.4rem;
+  animation: floatFlower 4s ease-in-out infinite;
+}
+.flower-deco:nth-child(2n) { animation-delay: -1.5s; }
+.flower-deco:nth-child(3n) { animation-delay: -2.8s; }
+
+@keyframes floatFlower {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+/* ===== TAPE STRIP ===== */
+.tape {
+  display: inline-block;
+  background: rgba(255, 220, 100, 0.55);
+  border: 1px solid rgba(200, 160, 20, 0.3);
+  padding: 3px 20px;
+  border-radius: 2px;
+  font-family: 'Kalam', cursive;
+  font-size: 0.85rem;
+  color: var(--maroon);
+  transform: rotate(-1.5deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.tape.right { transform: rotate(1.5deg); }
+
+/* ===== ILLUSTRATION CONTAINER ===== */
+.illo-frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex: 1;
+}
+
+.illo-frame img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 8px 24px rgba(44,8,8,0.25));
+  transition: transform 0.4s ease;
+}
+
+/* ===== SCROLL INDICATOR ===== */
+.scroll-hint {
+  font-family: 'Kalam', cursive;
+  font-size: 0.8rem;
+  opacity: 0.5;
+  text-align: center;
+  animation: pulseHint 2s ease-in-out infinite;
+}
+@keyframes pulseHint {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+/* ===== FLOATING PARTICLES ===== */
+.particles-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: particleDrift linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes particleDrift {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(-120px) rotate(360deg); opacity: 0; }
+}
+
+/* ===== CONFETTI ===== */
+.confetti-piece {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  animation: confettiFall linear forwards;
+  pointer-events: none;
+  z-index: 100;
+}
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--mustard); border-radius: 3px; }

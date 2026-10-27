@@ -1,0 +1,671 @@
+/* ============================================================
+   SCRAPBOOK PAGE — Shared styles for all memory pages
+   Shoptomi 1, Shoptomi 2, Oshtomi, Nabami, Dashami
+   ============================================================ */
+
+/* ===== CORNER MOTIFS ===== */
+.sp-corner {
+  position: absolute;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  z-index: 3;
+  pointer-events: none;
+  animation: cornerGlow 3s ease-in-out infinite;
+}
+.sp-corner--tl { top: 10px; left: 12px; }
+.sp-corner--tr { top: 10px; right: 12px; }
+.sp-corner--bl { bottom: 10px; left: 12px; }
+.sp-corner--br { bottom: 10px; right: 12px; }
+
+@keyframes cornerGlow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 0.9; transform: scale(1.2); }
+}
+
+/* ===== HEADER ===== */
+.sp-header {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(16px, 3vh, 28px) 12px 8px;
+  flex-shrink: 0;
+}
+
+.sp-tape {
+  background: rgba(255, 220, 100, 0.5);
+  border: 1px solid rgba(200, 160, 20, 0.25);
+  padding: 4px 18px;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+}
+.sp-tape--left  { transform: rotate(-2deg); align-self: flex-start; margin-left: 20px; }
+.sp-tape--right { transform: rotate(1.5deg); align-self: flex-end; margin-right: 20px; }
+.sp-tape--wide  { transform: rotate(-0.8deg); }
+
+.sp-day-counter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sp-day-num {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  opacity: 0.75;
+}
+
+/* ===== NAVIGATION ===== */
+.sp-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: clamp(10px, 2vh, 18px) 12px clamp(14px, 2.5vh, 22px);
+  flex-shrink: 0;
+}
+
+.sp-footer-deco {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.5;
+  color: var(--mustard);
+  font-size: 0.7rem;
+}
+
+.sp-nav-btn {
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+  padding: 12px 28px;
+}
+
+.sp-page-hint {
+  font-size: 0.75rem;
+  opacity: 0.45;
+}
+
+/* ===== FLOWER SCATTER ===== */
+.sp-flower-scatter {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.sp-flower {
+  position: absolute;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  animation: floatFlower 4s ease-in-out infinite;
+}
+.sp-f1 { top: 8%;  left: 5%;  animation-delay: 0s; }
+.sp-f2 { top: 15%; right: 6%; animation-delay: -1.2s; }
+.sp-f3 { bottom: 25%; left: 8%; animation-delay: -2.4s; }
+.sp-f4 { bottom: 18%; right: 5%; animation-delay: -0.8s; }
+.sp-f5 { top: 45%; left: 3%;  animation-delay: -1.8s; }
+
+@keyframes floatFlower {
+  0%, 100% { transform: translateY(0) rotate(-5deg); opacity: 0.7; }
+  50%       { transform: translateY(-8px) rotate(5deg); opacity: 1; }
+}
+
+/* ============================================================
+   ════ SHOPTOMI 1 — Dark Maroon, Rickshaw Ride ════
+   ============================================================ */
+
+.sp1-page {
+  background: radial-gradient(ellipse at 50% 30%, #5A1010 0%, #3A0808 45%, #200404 100%);
+}
+
+.sp1-header .sp-tape {
+  background: rgba(201, 162, 39, 0.25);
+  color: var(--light-gold);
+  border-color: rgba(201, 162, 39, 0.3);
+}
+.sp1-header .handwritten { color: var(--light-gold); }
+
+.sp1-label {
+  color: var(--light-gold);
+  text-shadow: 0 0 20px rgba(201,162,39,0.5), 0 3px 8px rgba(0,0,0,0.5);
+}
+
+.sp1-underline { background: linear-gradient(90deg, transparent, var(--mustard), transparent); }
+
+.sp1-illo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 0 8px;
+  min-height: 0;
+}
+
+.sp1-img {
+  max-width: min(500px, 92%);
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 32px rgba(0,0,0,0.6));
+  /* Black bg JPG blends into the dark maroon page naturally */
+}
+
+.sp1-footer .sp-page-hint { color: var(--off-white); }
+
+.sp-corner { color: var(--mustard); }
+.sp1-page .sp-corner { color: var(--mustard); }
+
+/* ============================================================
+   ════ SHOPTOMI 2 — Peacock Blue, Walking Together ════
+   ============================================================ */
+
+.sp2-page {
+  background: linear-gradient(160deg, #D4EDF7 0%, #AED6EC 40%, #E8F4F0 100%);
+}
+
+.sp2-header { gap: 4px; }
+
+.sp2-corner { color: var(--peacock); }
+
+.sp2-label {
+  color: var(--peacock);
+  text-shadow: 0 2px 8px rgba(26,82,118,0.3);
+}
+
+.sp2-counter { color: var(--peacock); }
+.sp2-underline { background: linear-gradient(90deg, transparent, var(--peacock), transparent); }
+
+.sp2-header .sp-tape {
+  background: rgba(26, 82, 118, 0.12);
+  color: var(--peacock);
+  border-color: rgba(26,82,118,0.2);
+}
+
+/* Dual illustration: couple prominent, rickshaw smaller & offset */
+.sp2-illo-area {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 0 12px;
+  min-height: 0;
+  gap: 0;
+}
+
+.sp2-couple-wrap {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.sp2-couple-img {
+  max-height: clamp(200px, 45vh, 380px);
+  max-width: min(280px, 55%);
+  object-fit: contain;
+  filter: drop-shadow(0 12px 28px rgba(26,82,118,0.25));
+}
+
+.sp2-rickshaw-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-left: -16px;
+  margin-bottom: 16px;
+}
+
+.sp2-rickshaw-img {
+  max-height: clamp(130px, 28vh, 240px);
+  max-width: min(190px, 40%);
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(26,82,118,0.2));
+}
+
+.sp2-rickshaw-label {
+  font-size: 0.8rem;
+  color: var(--peacock);
+  opacity: 0.65;
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* Flowers */
+.sp2-flowers {
+  display: flex;
+  gap: clamp(6px, 2vw, 14px);
+  font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+  padding: 4px 0;
+  z-index: 2;
+  flex-shrink: 0;
+}
+.sp2-flowers span {
+  display: inline-block;
+  animation: floatFlower 3s ease-in-out infinite;
+  color: var(--peacock);
+}
+
+.sp2-footer .sp-page-hint { color: var(--peacock); }
+.sp2-hint { color: var(--peacock); }
+
+/* ============================================================
+   ════ OSHTOMI — Warm Cream + Gold, The Photograph ════
+   ============================================================ */
+
+.os-page {
+  background: linear-gradient(150deg, #FFF8E7 0%, #FAF0D7 50%, #F5E6C8 100%);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E"),
+    linear-gradient(150deg, #FFF8E7 0%, #FAF0D7 50%, #F5E6C8 100%);
+}
+
+.os-corner { color: var(--saffron); }
+
+.os-header { padding-bottom: 6px; }
+
+.os-tape {
+  background: rgba(232,113,26,0.15);
+  color: var(--saffron);
+  border-color: rgba(232,113,26,0.25);
+}
+.os-tape .handwritten { color: var(--saffron); }
+.os-tape-r {
+  background: rgba(193,57,43,0.15);
+  color: var(--vermilion);
+  border-color: rgba(193,57,43,0.25);
+  transform: rotate(1.5deg);
+  align-self: flex-end;
+  margin-right: 20px;
+}
+.os-tape-r .handwritten { color: var(--vermilion); }
+
+.os-label {
+  color: var(--maroon);
+  text-shadow: 0 2px 8px rgba(74,14,14,0.2);
+}
+
+.os-underline { background: linear-gradient(90deg, transparent, var(--saffron), transparent); }
+
+/* Side-by-side duo */
+.os-illo-area {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  padding: 0 8px;
+  gap: 0;
+  min-height: 0;
+  position: relative;
+}
+
+.os-girl-wrap {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.os-girl-img {
+  max-height: clamp(220px, 46vh, 400px);
+  max-width: min(230px, 46%);
+  object-fit: contain;
+  filter: drop-shadow(0 12px 28px rgba(74,14,14,0.2));
+}
+
+.os-boy-wrap {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+  margin-left: -10px;
+}
+
+.os-boy-img {
+  max-height: clamp(180px, 38vh, 340px);
+  max-width: min(200px, 42%);
+  object-fit: contain;
+  filter: drop-shadow(0 10px 22px rgba(74,14,14,0.15));
+}
+
+/* Photo stamp */
+.os-photo-stamp {
+  position: absolute;
+  bottom: -8px;
+  right: -12px;
+  background: var(--cream);
+  border: 2px solid var(--paper-dark);
+  border-radius: 4px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transform: rotate(3deg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-size: 0.85rem;
+  z-index: 3;
+}
+.os-stamp-text {
+  color: var(--maroon);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* Caption note */
+.os-caption-note {
+  position: relative;
+  background: var(--cream);
+  border-radius: 6px;
+  padding: 8px 20px;
+  margin: 4px 0;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  border: 1px solid var(--paper-dark);
+  transform: rotate(-0.8deg);
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.os-note-tape {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 12px;
+  background: rgba(255,220,100,0.6);
+  border-radius: 1px;
+}
+
+.os-caption-text {
+  color: var(--maroon);
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  text-align: center;
+}
+
+.os-footer .sp-page-hint { color: var(--maroon); opacity: 0.45; }
+.os-hint { color: var(--maroon); }
+
+/* ============================================================
+   ════ NABAMI — Blush Rose, The Gift ════
+   ============================================================ */
+
+.nb-page {
+  background: linear-gradient(160deg, #FFF0F0 0%, #FDE8E0 45%, #FAF0E8 100%);
+}
+
+.nb-corner { color: var(--rose); font-size: 1.3rem; }
+
+.nb-header { padding-bottom: 4px; }
+
+.nb-header-note {
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  color: var(--sindoor);
+  opacity: 0.65;
+  margin-top: 4px;
+}
+
+.nb-label {
+  color: var(--sindoor);
+  text-shadow: 0 2px 8px rgba(176,58,46,0.25);
+}
+
+.nb-underline { background: linear-gradient(90deg, transparent, var(--rose), transparent); }
+
+/* Vertical duo: gift scene above, anklet scene below */
+.nb-illo-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 12px;
+  gap: 4px;
+  min-height: 0;
+  position: relative;
+}
+
+.nb-gift-wrap {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nb-gift-img {
+  max-height: clamp(160px, 30vh, 260px);
+  max-width: min(320px, 85%);
+  object-fit: contain;
+  /* black bg JPG — blends on light blush page with slight overlay */
+  border-radius: 8px;
+  filter: drop-shadow(0 8px 20px rgba(176,58,46,0.2));
+}
+
+.nb-divider {
+  font-size: 1.4rem;
+  color: var(--rose);
+  opacity: 0.6;
+  animation: floatFlower 3s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.nb-anklet-wrap {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nb-anklet-img {
+  max-height: clamp(150px, 28vh, 240px);
+  max-width: min(320px, 85%);
+  object-fit: contain;
+  border-radius: 8px;
+  filter: drop-shadow(0 8px 20px rgba(176,58,46,0.2));
+}
+
+/* Love note */
+.nb-love-note {
+  position: relative;
+  z-index: 2;
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 10px 22px;
+  margin: 2px 0;
+  box-shadow: 0 4px 14px rgba(176,58,46,0.15);
+  border: 1px solid rgba(216,136,128,0.3);
+  transform: rotate(0.5deg);
+  flex-shrink: 0;
+}
+
+.nb-note-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nb-note-text {
+  color: var(--sindoor);
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  text-align: center;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+/* Flowers */
+.nb-flowers {
+  display: flex;
+  gap: clamp(6px, 2vw, 12px);
+  font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+  flex-shrink: 0;
+  z-index: 2;
+}
+.nb-flowers span {
+  display: inline-block;
+  animation: floatFlower 3s ease-in-out infinite;
+}
+
+.nb-footer .sp-page-hint { color: var(--sindoor); opacity: 0.45; }
+.nb-hint { color: var(--sindoor); }
+
+/* ============================================================
+   ════ DASHAMI — Deep Red, Bittersweet Last Day ════
+   ============================================================ */
+
+.ds-page {
+  background: radial-gradient(ellipse at 50% 40%, #8B1A1A 0%, #5C0808 45%, #2E0404 100%);
+}
+
+.ds-corner { color: var(--light-gold); }
+
+.ds-petal-band {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: clamp(4px, 1.5vw, 10px);
+  font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+  padding: clamp(10px, 2vh, 18px) 0 6px;
+  flex-shrink: 0;
+  z-index: 2;
+  position: relative;
+}
+.ds-petal-band span {
+  display: inline-block;
+  animation: floatFlower 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 4px rgba(255,100,50,0.4));
+}
+
+.ds-header { padding-top: 4px; }
+
+.ds-title-top {
+  color: var(--light-gold);
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  opacity: 0.65;
+  margin-bottom: 4px;
+}
+
+.ds-label {
+  color: var(--light-gold);
+  text-shadow: 0 0 20px rgba(240,206,96,0.5), 0 3px 8px rgba(0,0,0,0.6);
+}
+
+.ds-underline { background: linear-gradient(90deg, transparent, var(--light-gold), transparent); }
+
+/* Main illo */
+.ds-illo-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 0 8px;
+  min-height: 0;
+}
+
+.ds-img {
+  max-height: clamp(240px, 52vh, 440px);
+  max-width: min(380px, 88%);
+  object-fit: contain;
+  filter: drop-shadow(0 16px 40px rgba(0,0,0,0.7));
+}
+
+/* Scattered petals around */
+.ds-scatter { position: absolute; inset: 0; pointer-events: none; }
+.ds-petal {
+  position: absolute;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  animation: floatFlower 4s ease-in-out infinite;
+}
+.ds-p1 { top: 10%; left: 6%;  animation-delay: 0s; }
+.ds-p2 { top: 20%; right: 5%; animation-delay: -1s; }
+.ds-p3 { bottom: 20%; left: 5%;  animation-delay: -2s; }
+.ds-p4 { bottom: 10%; right: 8%; animation-delay: -0.5s; }
+
+/* Caption */
+.ds-caption-wrap {
+  z-index: 2;
+  position: relative;
+  flex-shrink: 0;
+  padding: 0 16px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ds-caption-card {
+  background: rgba(255, 248, 231, 0.1);
+  border: 1px solid rgba(240,206,96,0.25);
+  border-radius: 8px;
+  padding: 10px 22px;
+}
+
+.ds-caption {
+  color: var(--light-gold);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  text-align: center;
+  opacity: 0.85;
+}
+
+/* CTA button */
+.ds-footer { padding-top: 8px; }
+
+.ds-cta-btn {
+  background: linear-gradient(135deg, var(--light-gold) 0%, var(--mustard) 100%);
+  color: var(--maroon);
+  font-family: 'Kalam', cursive;
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 14px 36px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow:
+    0 8px 28px rgba(201,162,39,0.5),
+    0 2px 0 rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 8px 28px rgba(201,162,39,0.5); }
+  50%       { box-shadow: 0 8px 40px rgba(201,162,39,0.75), 0 0 20px rgba(240,206,96,0.3); }
+}
+
+.ds-cta-btn:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+.ds-cta-btn:focus-visible {
+  outline: 3px solid var(--light-gold);
+  outline-offset: 4px;
+}
+
+/* ============================================================
+   MOBILE OVERRIDES
+   ============================================================ */
+@media (max-width: 480px) {
+  .sp2-illo-area { flex-direction: column; align-items: center; gap: 4px; padding-bottom: 4px; }
+  .sp2-couple-wrap { width: 100%; display: flex; justify-content: center; }
+  .sp2-couple-img { max-width: 75%; max-height: clamp(180px, 40vw, 280px); }
+  .sp2-rickshaw-wrap { margin-left: 0; margin-bottom: 0; }
+  .sp2-rickshaw-img { max-width: 55%; max-height: clamp(110px, 28vw, 180px); }
+
+  .os-illo-area { flex-direction: row; align-items: flex-end; }
+  .os-girl-img { max-width: min(160px, 44%); }
+  .os-boy-img  { max-width: min(150px, 42%); }
+
+  .nb-illo-area { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 6px; }
+  .nb-gift-img   { max-height: clamp(130px, 35vw, 200px); }
+  .nb-anklet-img { max-height: clamp(120px, 32vw, 190px); }
+  .nb-divider { display: none; }
+}
