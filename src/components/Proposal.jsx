@@ -103,6 +103,10 @@ export default function Proposal({ onNext }) {
           </svg>
         </div>
 
+        <p className="proposal-pre-text">
+          Thank you for making this pujo the best puja of my life.
+        </p>
+
         <h1 className="proposal-question">
           ARE YOU GOING TO SPEND THE REST OF YOUR PUJAS WITH ME?
         </h1>
